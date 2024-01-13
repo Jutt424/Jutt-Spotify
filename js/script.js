@@ -87,7 +87,7 @@ let currFolder;
 
 async function displayAlbums() {
     console.log("displaying albums")
-    let a = await fetch(`/songs/`)
+    let a = await fetch(`https://musifyhub.netlify.app/songs/`);
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
