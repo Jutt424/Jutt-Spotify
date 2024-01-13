@@ -22,7 +22,7 @@ function secondsToMinutesSeconds(seconds) {
 async function getSongs(folder) {
     try {
         currFolder = folder;
-       let a = await fetch(`/${folder}/`)
+        let a = await fetch(`/${folder}/`, { method: 'GET', mode: 'cors' });
         let html = await response.text();
         let parser = new DOMParser();
         let doc = parser.parseFromString(html, "text/html");
@@ -121,8 +121,12 @@ async function displayAlbums() {
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async item => {
             console.log("Fetching Songs")
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-            playMusic(songs[0])
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
+if (songs.length > 0) {
+    playMusic(songs[0]);
+}
+
+
 
         })
     })
