@@ -22,7 +22,7 @@ function secondsToMinutesSeconds(seconds) {
 async function getSongs(folder) {
     try {
         currFolder = folder;
-        let response = await fetch(`http://192.168.0.108:3000//${folder}/`);
+        let response = await fetch(`https://musifyhub.netlify.app//${folder}/`);
         let html = await response.text();
         let parser = new DOMParser();
         let doc = parser.parseFromString(html, "text/html");
