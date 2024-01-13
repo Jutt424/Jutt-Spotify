@@ -44,7 +44,7 @@ async function getSongs(folder) {
             songUL.innerHTML = songUL.innerHTML + `<li><img class="invert" width="34" src="img/music.svg" alt="">
                                      <div class="info">
                                          <div> ${song.replaceAll("%20", " ")}</div>
-                                         <div>Jutt</div>
+                                         <div></div>
                                      </div>
                                      <div class="playnow">
                                          <span>Play Now</span>
