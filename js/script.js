@@ -130,7 +130,7 @@ async function main() {
     try {
         // Get list of all songs
         songs = await getSongs("songs/ncs");
-        console.log("Fetched songs:", songs); // Add this line to log songs
+        console.log("Fetched songs:", songs);
         playMusic(songs[0], true);
 
         // Display all the albums on the page
@@ -144,4 +144,3 @@ async function main() {
 }
 
 main();
-
